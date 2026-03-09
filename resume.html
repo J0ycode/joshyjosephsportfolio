@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshy Joseph - Executive Resume</title>
+    <!-- Google Fonts: Inter and Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --clr-text: #1a1f2e;
+            --clr-text-light: #525a70;
+            --clr-gold: #c6a35f;
+            --clr-bg: #fdfdfd;
+            --clr-surface: #ffffff;
+            --clr-border: #e6e9f2;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f2f4f8;
+            color: var(--clr-text);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Resume Container (A4 Proportions) */
+        .resume-wrapper {
+            max-width: 850px;
+            margin: 40px auto;
+            background: var(--clr-surface);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 48px 56px;
+            background: #0d121f;
+            /* Dark background for header */
+            color: #ffffff;
+        }
+
+        .photo-wrap {
+            flex-shrink: 0;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid var(--clr-gold);
+            overflow: hidden;
+            margin-right: 40px;
+            background: #1a1f2e;
+        }
+
+        .photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .header-content {
+            flex-grow: 1;
+        }
+
+        .name {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--clr-gold);
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 24px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Body Layout */
+        .body {
+            padding: 48px 56px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--clr-gold);
+            border-bottom: 1px solid var(--clr-border);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Executive Profile */
+        .profile-text {
+            font-size: 0.95rem;
+            color: var(--clr-text-light);
+            text-align: justify;
+            margin-bottom: 16px;
+        }
+
+        .profile-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Core Competencies */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #f4f6fa;
+            color: var(--clr-text);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--clr-border);
+        }
+
+        /* Experience Details */
+        .exp-item {
+            margin-bottom: 28px;
+        }
+
+        .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--clr-text);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--clr-gold);
+        }
+
+        .exp-org {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--clr-text-light);
+            margin-bottom: 8px;
+        }
+
+        .exp-desc {
+            font-size: 0.9rem;
+            color: var(--clr-text-light);
+        }
+
+        .exp-desc ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .exp-desc li {
+            margin-bottom: 4px;
+        }
+
+        /* Ventures */
+        .venture-item {
+            margin-bottom: 16px;
+        }
+
+        .venture-item strong {
+            color: var(--clr-text);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .venture-desc {
+            display: inline;
+            font-size: 0.9rem;
+            color: var(--clr-text-light);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: none;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resume-wrapper {
+                margin: 0;
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .header {
+                padding: 32px 40px;
+            }
+
+            .body {
+                padding: 32px 40px;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 24px;
+            }
+
+            .photo-wrap {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .exp-date {
+                margin-top: 2px;
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="resume-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="photo-wrap">
+                <!-- Assuming image.png exists in the same directory as per original HTML -->
+                <img src="image.png" alt="Joshy Joseph">
+            </div>
+            <div class="header-content">
+                <h1 class="name">Joshy Joseph</h1>
+                <div class="title">Director · Vice Chairman | Financial & Strategic Leader</div>
+                <div class="contact-info">
+                    <span>📧 josh2me@gmail.com</span>
+                    <span>🔗 linkedin.com/in/joshyjoseph</span>
+                    <span>📍 Kerala, India</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="body">
+
+            <!-- Profile -->
+            <section>
+                <h2 class="section-title">Executive Profile</h2>
+                <p class="profile-text">
+                    I am an acclaimed entrepreneur, visionary, and seasoned professional with an illustrious career
+                    spanning 26 years in Sales, Marketing, and Management, including 20 years in senior managerial
+                    roles. My expertise is built upon 15 years dedicated to the NBFC space and 5 years in the Insurance
+                    industry, driving growth and operational excellence across Kerala and Tamil Nadu.
+                </p>
+                <p class="profile-text">
+                    As Vice Chairman at KIDCO Ltd. and Director at LeaseIndex India Limited, I provide board-level
+                    strategic vision. My extensive exposure encompasses business budgeting, sales planning, expansion
+                    strategies, and developing operational policies. I excel in managing manpower, team recruitment, and
+                    achieving sustainable business excellence and customer satisfaction.
+                </p>
+            </section>
+
+            <!-- Competencies -->
+            <section>
+                <h2 class="section-title">Core Competencies</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">Business Strategy</span>
+                    <span class="skill-tag">Regulatory Compliance</span>
+                    <span class="skill-tag">MSME Finance</span>
+                    <span class="skill-tag">Business Budgeting</span>
+                    <span class="skill-tag">Sales Planning</span>
+                    <span class="skill-tag">Operations Management</span>
+                    <span class="skill-tag">Team Leadership</span>
+                    <span class="skill-tag">Customer Satisfaction</span>
+                    <span class="skill-tag">Risk Management</span>
+                    <span class="skill-tag">Business Development</span>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section>
+                <h2 class="section-title">Leadership Experience</h2>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Director</h3>
+                        <span class="exp-date">Nov 2025 – Present</span>
+                    </div>
+                    <div class="exp-org">LeaseIndex India Limited</div>
+                    <div class="exp-desc">
+                        <p>Driving strategic growth, regulatory compliance, and MSME financial inclusion for a leading
+                            financial services and leasing company.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Vice Chairman</h3>
+                        <span class="exp-date">Oct 2025 – Present</span>
+                    </div>
+                    <div class="exp-org">Kendriya Infrastructure And Development Multi-State Co-operative Society
+                        Limited (KIDCO Ltd.)</div>
+                    <div class="exp-desc">
+                        <p>Providing board-level strategic leadership, institutional governance oversight, and driving
+                            organisational development and stakeholder engagement.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Zonal Manager</h3>
+                        <span class="exp-date">Jun 2020 – Jan 2025</span>
+                    </div>
+                    <div class="exp-org">KLM Axiva Finvest Ltd</div>
+                    <div class="exp-desc">
+                        <ul>
+                            <li>Led zonal operations across multiple branches and regions in Kerala, driving business
+                                growth, team performance, and compliance for a leading NBFC.</li>
+                            <li>Deployed a performance-driven branch management model, strengthened credit assessment
+                                processes, and built high-engagement teams.</li>
+                            <li>Delivered consistent zonal growth targets, improved NPA management ratios, and built a
+                                pipeline of internal leadership talent.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Asst. Regional Manager (Prev. Area Manager)</h3>
+                        <span class="exp-date">Nov 2010 – Jun 2020</span>
+                    </div>
+                    <div class="exp-org">Muthoot Fincorp Ltd</div>
+                    <div class="exp-desc">
+                        <ul>
+                            <li>Built a decade-long leadership track record progressing from Area Manager to Assistant
+                                Regional Manager across Kerala and Tamil Nadu.</li>
+                            <li>Implemented standardised branch operation models, introduced structured sales protocols,
+                                and championed customer-first service delivery.</li>
+                            <li>Achieved steady promotions through consistent performance, exceptional people
+                                leadership, and operational excellence.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Branch Manager</h3>
+                        <span class="exp-date">Oct 2008 – Nov 2010</span>
+                    </div>
+                    <div class="exp-org">HDFC Standard Life Insurance Co. Ltd</div>
+                    <div class="exp-desc">
+                        <p>Drove branch operations, sales performance, and team development in the competitive life
+                            insurance sector, successfully scaling branch profitability.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Area Manager</h3>
+                        <span class="exp-date">Aug 2008 – Oct 2008</span>
+                    </div>
+                    <div class="exp-org">Suprasesh General Insurance Services Pvt Ltd</div>
+                    <div class="exp-desc">
+                        <p>Oversaw area-level operations and business development strategies for comprehensive general
+                            insurance products.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Branch Sales Manager</h3>
+                        <span class="exp-date">Sep 2007 – Mar 2008</span>
+                    </div>
+                    <div class="exp-org">Tata AIG Life Insurance Co Ltd</div>
+                    <div class="exp-desc">
+                        <p>Managed and incentivised branch sales teams to drive premium collection and customer
+                            acquisition objectives rapidly.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Branch Manager</h3>
+                        <span class="exp-date">Dec 2004 – Sep 2007</span>
+                    </div>
+                    <div class="exp-org">Bajaj Allianz Life Ins Co</div>
+                    <div class="exp-desc">
+                        <p>Led multifaceted branch operations and drove profound life insurance sales growth over three
+                            years.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Senior Marketing Manager</h3>
+                        <span class="exp-date">Jan 2000 – Nov 2004</span>
+                    </div>
+                    <div class="exp-org">Mangalam Publications</div>
+                    <div class="exp-desc">
+                        <p>Directed high-impact marketing strategies, driving sustained circulation growth and
+                            strengthening brand visibility across regions.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3 class="exp-role">Public Relationship Manager</h3>
+                        <span class="exp-date">Nov 1999 – Dec 2000</span>
+                    </div>
+                    <div class="exp-org">TIHANS</div>
+                    <div class="exp-desc">
+                        <p>Managed external communications, media outreach, and public relations to establish a
+                            resilient corporate image.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Ventures -->
+            <section>
+                <h2 class="section-title">Entrepreneurial Ventures</h2>
+
+                <div class="venture-item">
+                    <strong>Ultraunited Pvt. Ltd.</strong>
+                    <div class="venture-desc"> — A leading crockery and household distribution firm offering an
+                        extensive multi-brand portfolio to a wide customer base.</div>
+                </div>
+
+                <div class="venture-item">
+                    <strong>Boon Baby</strong>
+                    <div class="venture-desc"> — A specialized chain of retail stores catering to premium children’s
+                        products, essentials, and accessories, focused on quality and reach.</div>
+                </div>
+
+                <div class="venture-item">
+                    <strong>TJ Rubbers</strong>
+                    <div class="venture-desc"> — A dynamic enterprise actively engaged in professional rubber trading,
+                        leveraging deep market insights to drive supply chain excellence.</div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
