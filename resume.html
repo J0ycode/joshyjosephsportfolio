@@ -227,24 +227,33 @@
 
         /* Print Styles */
         @media print {
+            @page {
+                size: A4;
+                margin: 0;
+                /* Remove default browser header/footer (date & time) */
+            }
+
             body {
                 background: none;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                padding-top: 15mm;
+                padding-bottom: 15mm;
             }
 
             .resume-wrapper {
-                margin: 0;
+                margin: 0 auto;
                 box-shadow: none;
                 max-width: 100%;
             }
 
             .header {
-                padding: 32px 40px;
+                padding: 32px 56px;
+                border-radius: 0;
             }
 
             .body {
-                padding: 32px 40px;
+                padding: 32px 56px;
             }
         }
 
