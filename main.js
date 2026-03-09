@@ -357,24 +357,10 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 })();
 
 // ══════════════════════════════════════════
-// 11. RESUME DOWNLOAD BUTTON
+// 11. RESUME DOWNLOAD BUTTON (DEPRECATED - HANDLED BY HTML)
 // ══════════════════════════════════════════
 (function initResumeBtn() {
-  const btn = $('#resumeBtn');
-  if (!btn) return;
-
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    // Create a simple text file as placeholder
-    const content = `JOSHY JOSEPH\nAdditional Director | LeaseIndex India Ltd\nKerala, India\n\nThis is a placeholder for the executive profile PDF.\nPlease replace with actual resume file.`;
-    const blob = new Blob([content], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Joshy_Joseph_Executive_Profile.txt';
-    a.click();
-    URL.revokeObjectURL(url);
-  });
+  // Logic removed to allow native HTML <a href="resume.html"> to run.
 })();
 
 // ══════════════════════════════════════════
