@@ -110,6 +110,17 @@
             gap: 6px;
         }
 
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--clr-gold);
+            text-decoration: underline;
+        }
+
         /* Body Layout */
         .body {
             padding: 48px 56px;
@@ -229,16 +240,16 @@
         @media print {
             @page {
                 size: A4;
-                margin: 0;
-                /* Remove default browser header/footer (date & time) */
+                margin: 15mm 0;
+                /* Add top and bottom margins directly to the page */
             }
 
             body {
                 background: none;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-                padding-top: 15mm;
-                padding-bottom: 15mm;
+                padding-top: 0;
+                padding-bottom: 0;
             }
 
             .resume-wrapper {
@@ -300,8 +311,9 @@
                 <h1 class="name">Joshy Joseph</h1>
                 <div class="title">Director · Vice Chairman | Financial & Strategic Leader</div>
                 <div class="contact-info">
-                    <span>📧 josh2me@gmail.com</span>
-                    <span>🔗 linkedin.com/in/joshyjoseph</span>
+                    <span>📧 <a href="mailto:josh2me@gmail.com">josh2me@gmail.com</a></span>
+                    <span>🔗 <a href="https://linkedin.com/in/joshyjoseph" target="_blank"
+                            rel="noopener noreferrer">linkedin.com/in/joshyjoseph</a></span>
                     <span>📍 Kerala, India</span>
                 </div>
             </div>
